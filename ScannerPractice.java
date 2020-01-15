@@ -1,4 +1,4 @@
-package day04;
+package day06;
 
 import java.util.Scanner;
 
@@ -6,20 +6,20 @@ public class ScannerPractice {
 
     public static void main(String[] args) {
 
+
         Scanner scan = new Scanner(System.in);
+        double regularPrice, salePrice, discountPercentage ;
 
-        // ask user to enter name
-        System.out.println("Enter your first name please : ");
+        System.out.println(" What is the regular price ? "); // Ask the User
+        regularPrice = scan.nextDouble();      // Capture the input
 
-       //capture what user typed on keyboard in console
-        String firstName = scan.next();
+        System.out.println(" What is the discount of percentage : ");  // Ask the User
+        discountPercentage = scan.nextDouble();                        // Capture the Input
 
-        // print the result of what we saved from user input
-        System.out.println("Your first name is : " + firstName);
+        salePrice = regularPrice-discountPercentage*regularPrice; // Calculation here
 
-        System.out.println("What is your age? ");
-        int age = scan.nextInt();
-        System.out.println("Your age is : " + age);
+        System.out.println("Regaular price is " + regularPrice
+                + ", discount is " + discountPercentage + " and you got deal for " + salePrice + "$");
 
     }
 }
