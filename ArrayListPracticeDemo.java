@@ -1,12 +1,13 @@
-package day035;
+package day036;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * @author : Akbar
  * Created At : 12/29/19
  */
-
 public class ArrayListPracticeDemo {
 
     public static void main(String[] args) {
@@ -21,11 +22,11 @@ public class ArrayListPracticeDemo {
         lst.add("Arya Stark");
 
         //lst.add(index location to insert , String object);
-        lst.add(1,"Bran Stark");
-        lst.add(3,"Tony Stark");
+        lst.add(1, "Bran Stark");
+        lst.add(3, "Tony Stark");
 
 
-        // to see what's inside array (yep , just print it out directly)
+        // to see what's inside ArrayList (yep , just print it out directly)
         System.out.println("Original lst = \n\t" + lst);
 
         //Counting the elements inside ArrayList
@@ -41,11 +42,11 @@ public class ArrayListPracticeDemo {
         System.out.println("\nfirst item lst.get(0) = " + lst.get(0));
         System.out.println("second item lst.get(1) = " + lst.get(1));
         System.out.println("last item of any ArrayList object \n\t lst.get(lst.size()-1) ="
-                + lst.get( lst.size()-1 ));
+                + lst.get(lst.size() - 1));
 
         //Replace the value of element at certain index
         //lst.set(index, newValue)
-        lst.set(3,"Rob Stark");
+        lst.set(3, "Rob Stark");
         System.out.println("\nAfter replacing element with new value at index 3 lst = \n\t" + lst);
 
         //remove an element by it's value
@@ -60,15 +61,15 @@ public class ArrayListPracticeDemo {
 
         // check if an element exists in the list
         //lst.contains( element )
-        System.out.println("\nlst.contains(\"Rob Stark\") = " + lst.contains("Rob Stark") );
+        System.out.println("\nlst.contains(\"Rob Stark\") = " + lst.contains("Rob Stark"));
 
         // get the index of an element in the list
         //lst.indexOf(element) ;
-        System.out.println("lst.indexOf(\"Arya Stark\") = " + lst.indexOf("Arya Stark") );
+        System.out.println("lst.indexOf(\"Arya Stark\") = " + lst.indexOf("Arya Stark"));
 
         // get the last index of an element in the list
         //lst.lastIndexOf(element) ;
-        System.out.println("lst.lastIndexOf(\"Jon Snow\") = " + lst.lastIndexOf("Jon Snow") );
+        System.out.println("lst.lastIndexOf(\"Jon Snow\") = " + lst.lastIndexOf("Jon Snow"));
 
         System.out.println("\niterating over a list using for loop");
         for (int i = 0; i < lst.size(); i++) {
@@ -102,7 +103,7 @@ public class ArrayListPracticeDemo {
         System.out.println("\nGetting array out of lst");
         String[] arrOutOfList = lst.toArray(new String[0]);
         System.out.println("Array object we got from the list using lst.toArray(new String[0]) \n\t"
-                + Arrays.toString(arrOutOfList) );
+                + Arrays.toString(arrOutOfList));
 
         // turning your array into an List
         // this method will generate unmodifiable list
@@ -118,15 +119,12 @@ public class ArrayListPracticeDemo {
         //lst.retainAll(another list)
 
         // Sorting an Array in ascending natural order
-        lst.sort( Comparator.naturalOrder() );
+        lst.sort(Comparator.naturalOrder());
         System.out.println("After Sorting in low to high (natural) order = \n\t" + lst);
-        lst.sort( Comparator.reverseOrder() );
+        lst.sort(Comparator.reverseOrder());
         System.out.println("After Sorting in high to low (reverse) order = \n\t" + lst);
         // DOES THIS WORK FOR ARRAY ? SURE IT DOES
         // overloaded version of sort method accept a comparator
-        Arrays.sort( arrOutOfList,Comparator.reverseOrder() );
-
-
+        Arrays.sort(arrOutOfList, Comparator.reverseOrder());
     }
-
 }
